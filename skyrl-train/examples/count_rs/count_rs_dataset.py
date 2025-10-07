@@ -37,7 +37,7 @@ def prepare_dataset(words: list[str], split_name: str) -> Dataset:
     for word in words:
         user_prompt = f"How many times appear the character {C} in the word: {word}?"
         data = {
-            "data_source": "synthetic_multiply",
+            "data_source": "online_words",
             "prompt": [
                 SYSTEM_PROMPT,
                 {
@@ -45,7 +45,7 @@ def prepare_dataset(words: list[str], split_name: str) -> Dataset:
                     "content": user_prompt,
                 },
             ],
-            "env_class": "multiply",
+            "env_class": "count_rs",
             "reward_spec": {
                 "method": "rule",
                 "ground_truth": str(word.count(C)),
