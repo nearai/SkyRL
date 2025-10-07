@@ -22,7 +22,7 @@ uv run --isolated --extra vllm -m examples.count_rs.main_count_rs \
   trainer.epochs=20 \
   trainer.update_epochs_per_batch=1 \
   trainer.train_batch_size=1024 \
-  trainer.policy_mini_batch_size=256 \
+  trainer.policy_mini_batch_size=512 \
   trainer.critic_mini_batch_size=256 \
   trainer.micro_forward_batch_size_per_gpu=64 \
   trainer.micro_train_batch_size_per_gpu=64 \
